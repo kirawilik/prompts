@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Connexion</title>
+
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND + FILTRE NUIT */
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    position: relative; /* nécessaire pour ::before */
+    background-image: url('ucas.png'); /* ton image de fond */
+    background-size: cover;
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* TEXTE CENTRÉ */
+.center {
+    position: relative;
+    z-index: 1; /* au-dessus du filtre */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* optionnel pour meilleure lisibilité */
+}
+
+/* BOUTON DE CONNEXION */
+.btn-connexion {
+    position: fixed;   
+    bottom: 100px;      
+    left: 50%; 
+    transform: translateX(-50%); /* centrer horizontalement */
+    background: #225281; /* bleu lumineux */
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    z-index: 1; /* au-dessus du filtre */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-connexion:hover {
+    background: #104E8B;
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="center">
+</div>
+
+<button class="btn-connexion" onclick="window.location.href='login.php'">
+    Connexion
+</button>
+
+</body>
+</html>
